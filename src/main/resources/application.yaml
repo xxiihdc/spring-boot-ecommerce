@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/java5shop
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  servlet:
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 3MB
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8083/auth/realms/zshop/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/auth/realms/zshop
+      client:
+        registration:
+          google:
+            client-id: 866719052048-s4k9pnihvn9gp7rqfk66spf6bug0cnh2.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
